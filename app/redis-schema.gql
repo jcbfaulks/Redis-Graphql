@@ -1,0 +1,10 @@
+type Query {
+    ping: String
+    get(key: String): String
+    hget(key: String, field: String): String
+}
+
+type Mutation {
+    set(key: String, value: String): String
+    hset(key: String, field: String, value: String): String
+}
