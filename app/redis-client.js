@@ -19,7 +19,9 @@ const resolvers = {
     },
     Mutation: {
         set: async (_, {key, value}) => await client.set(key, value),
-        hset: async (_, {key, field, value}) => await client.hSet(key, field, value)
+        hset: async (_, {key, field, value}) => await client.hSet(key, field, value),
+        incr: async(_, {key}) => await client.incr(key),
+        decr: async(_, {key}) => await client.decr(key)
     }
 };
 

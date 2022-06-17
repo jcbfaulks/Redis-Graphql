@@ -7,4 +7,6 @@ type Query {
 type Mutation {
     set(key: String, value: String): String
     hset(key: String, field: String, value: String): String
+    incr(key: String) : Int
+    decr(key: String) : Int
 }
