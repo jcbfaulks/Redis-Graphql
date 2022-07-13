@@ -2,6 +2,7 @@ type Query {
     ping: String
     get(key: String): String
     hget(key: String, field: String): String
+    exists(key: String): Boolean
 }
 
 type Mutation {
@@ -9,4 +10,5 @@ type Mutation {
     hset(key: String, field: String, value: String): String
     incr(key: String) : Int
     decr(key: String) : Int
+    append(key: String, value: String): Int
 }

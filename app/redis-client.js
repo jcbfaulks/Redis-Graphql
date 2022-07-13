@@ -15,13 +15,15 @@ const resolvers = {
     Query: {
         ping: async (_) => await client.ping(),
         get: async (_, {key}) => (await client.get(key)),
-        hget: async (_, {key, field}) => await client.hGet(key, field)
+        hget: async (_, {key, field}) => await client.hGet(key, field),
+        exists: async (_, {key}) => await client.exists(key),
     },
     Mutation: {
         set: async (_, {key, value}) => await client.set(key, value),
         hset: async (_, {key, field, value}) => await client.hSet(key, field, value),
         incr: async(_, {key}) => await client.incr(key),
-        decr: async(_, {key}) => await client.decr(key)
+        decr: async(_, {key}) => await client.decr(key),
+        append: async (_, {key, value}) => await client.append(key, value)
     }
 };
 
